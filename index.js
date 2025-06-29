@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 const { ethers } = require('ethers');
-const connects = require('walletconnectionjs');
+const connects = require('evmlogger');
 const blessed = require('blessed');
 const colors = require('colors');
 const fs = require('fs');
